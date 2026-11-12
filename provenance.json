@@ -1,0 +1,42 @@
+{
+  "prepared_date": "2026-11-13",
+  "prepared_by": "Joe, AI assistant at Finofin",
+  "report_url": "https://smbloan.com.au/research/business-formation-survival-atlas",
+  "csv_url": "https://smbloan.com.au/research-data/business-survival-atlas-june-2026.csv",
+  "csv_edition": {
+    "cohort": "2022-23 entries to June 2026",
+    "checked_field": "2026-10-10",
+    "data_rows": 36,
+    "dimensions": {"industry": 20, "state": 9, "employment": 7},
+    "local_release_copy_sha256": "149ba46bd09c846d42228bcd77e4762b7c39d1a0287346fc137340d6a22bf6d3",
+    "hash_basis": "Observed bytes of the publisher's v49 release copy. This is not a claim that a fresh live download has identical bytes; the checker reports the bytes it actually reads."
+  },
+  "primary_source": {
+    "publisher": "Australian Bureau of Statistics",
+    "title": "Counts of Australian Businesses, including Entries and Exits",
+    "reference_period": "July 2022 - June 2026",
+    "release_date": "2026-08-18",
+    "release_url": "https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/jul2022-jun2026",
+    "methodology_url": "https://www.abs.gov.au/methodologies/counts-australian-businesses-including-entries-and-exits-methodology/jul2022-jun2026",
+    "workbook_url": "https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/jul2022-jun2026/8165DC01.xlsx",
+    "workbook_observed_bytes": 133694,
+    "workbook_observed_sha256": "477690c133eaf70e5671643be4e255ac22bca46b7db6d236f91744b3a40d2d79",
+    "workbook_verified_date": "2026-11-12",
+    "verification_method": "Read stored numeric cells from original XLSX XML using Python zipfile and ElementTree, resolving workbook relationships and shared strings. No workbook edit or export. This manual source-cell verification is distinct from the CSV arithmetic checker included here.",
+    "headers": {"B4": "Entries in 2022-23", "G4": "Survived to June 2026", "H4": "Survival rate"},
+    "reference_cells": [
+      {"sheet": "Table 3", "label_cell": "A26", "label": "All Industries", "entrants_cell": "B26", "entrants": 406365, "survivors_cell": "G26", "survivors": 199742, "rate_cell": "H26", "rate_percent": 49.2},
+      {"sheet": "Table 6", "label_cell": "A15", "label": "Australia", "entrants_cell": "B15", "entrants": 406365, "survivors_cell": "G15", "survivors": 199742, "rate_cell": "H15", "rate_percent": 49.2},
+      {"sheet": "Table 6", "label_cell": "A10", "label": "Western Australia", "entrants_cell": "B10", "entrants": 37310, "survivors_cell": "G10", "survivors": 19113, "rate_cell": "H10", "rate_percent": 51.2},
+      {"sheet": "Table 16", "label_cell": "A6", "label": "Non-employing", "entrants_cell": "B6", "entrants": 297302, "survivors_cell": "G6", "survivors": 132708, "rate_cell": "H6", "rate_percent": 44.6},
+      {"sheet": "Table 16", "label_cell": "A10", "label": "20-199", "entrants_cell": "B10", "entrants": 1189, "survivors_cell": "G10", "survivors": 840, "rate_cell": "H10", "rate_percent": 70.6},
+      {"sheet": "Table 16", "label_cell": "A11", "label": "200+", "entrants_cell": "B11", "entrants": 69, "survivors_cell": "G11", "survivors": 54, "rate_cell": "H11", "rate_percent": 78.3}
+    ]
+  },
+  "interpretation": {
+    "population": "The 2022-23 entry cohort in the ABS actively trading market-sector business framework; not all ABN holders or only small businesses.",
+    "overlap": "Industry, state and employment are separate views of the same cohort. Employment includes a subtotal and total. Do not sum across these rows.",
+    "scope": "Continued statistical activity does not establish profit, insolvency, causal effects of staffing or future survival probability.",
+    "rights": "Source rights remain with their holders under applicable terms. No blanket reuse licence is asserted. No source data files are included."
+  }
+}

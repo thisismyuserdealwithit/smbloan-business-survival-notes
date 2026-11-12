@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the starting counts behind five Australian business survival rates. ABS 2022–23 entry cohort, followed to June 2026, with source cells and interpretation limits.">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Business survival: see the starting count | SMB Loan research notes</title>
+  <link rel="canonical" href="https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/">
+  <style>
+    :root { --ink: #192d37; --muted: #4c626a; --accent: #116255; --paper: #f7f6f0; --line: #c7d2ce; --wash: #e9f1ed; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: .15em; }
+    :focus-visible { outline: 3px solid #865300; outline-offset: 4px; }
+    .skip { position: absolute; left: 1rem; top: -5rem; padding: .6rem 1rem; background: white; }
+    .skip:focus { top: 1rem; z-index: 2; }
+    .shell { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .masthead { display: flex; gap: 1rem; align-items: center; justify-content: space-between; padding-block: 1.2rem; }
+    .brand { font-size: .9rem; font-weight: 750; letter-spacing: .045em; }
+    .masthead a { font-size: .9rem; }
+    main { padding-block: 3rem 1rem; }
+    .eyebrow { margin: 0 0 .7rem; color: var(--accent); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 20ch; font-size: clamp(2rem, 5.3vw, 3.6rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.1; }
+    .intro { max-width: 66ch; margin: 1.4rem 0 2rem; font-size: 1.12rem; }
+    .period { display: inline-block; padding: .4rem .8rem; margin-bottom: 2rem; border: 1px solid var(--line); font-size: .9rem; }
+    h2 { font-size: 1.35rem; letter-spacing: -.02em; line-height: 1.3; margin: 0 0 .9rem; }
+    h3 { font-size: 1rem; margin: 1.4rem 0 .35rem; }
+    p { margin: 0 0 1rem; }
+    .explorer { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); border: 1px solid var(--line); background: white; }
+    .controls { padding: 1.7rem; }
+    .controls label { display: block; margin-bottom: .5rem; font-weight: 650; }
+    select { width: 100%; min-height: 3rem; padding: .65rem; color: var(--ink); background: white; border: 1px solid #718a83; border-radius: .2rem; font: inherit; }
+    .hint { color: var(--muted); font-size: .9rem; margin-top: .7rem; }
+    .result { padding: 1.7rem; background: var(--wash); border-left: 1px solid var(--line); }
+    .result h3 { margin: 0; font-size: .9rem; font-weight: 600; }
+    .rate { margin: .3rem 0 .8rem; font-size: clamp(2.7rem, 6vw, 4.2rem); line-height: 1.15; letter-spacing: -.05em; font-weight: 720; color: var(--accent); }
+    .counts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; padding: 0 0 1rem; margin: 0 0 1rem; border-bottom: 1px solid #b6cac1; }
+    .counts dt { font-size: .82rem; color: var(--muted); }
+    .counts dd { margin: .15rem 0 0; font-size: 1.4rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+    .formula { font-size: 1.03rem; font-variant-numeric: tabular-nums; }
+    .result-note { margin-bottom: 0; font-size: .91rem; }
+    section { margin-bottom: 2.8rem; }
+    .explorer-section { margin-bottom: 2rem; }
+    .reading { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; padding-top: .7rem; }
+    .reading p { max-width: 60ch; }
+    .table-wrap { overflow-x: auto; border-block: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+    caption { text-align: left; color: var(--muted); padding: .85rem 0; font-size: .9rem; }
+    th, td { padding: .85rem .75rem; border-top: 1px solid var(--line); vertical-align: top; }
+    th { text-align: left; font-weight: 650; }
+    thead { background: #edf0e9; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    tbody tr[data-selected="true"] { background: var(--wash); }
+    tfoot { font-weight: 700; }
+    .table-note { color: var(--muted); font-size: .88rem; margin-top: .65rem; }
+    .limits { border-left: 3px solid var(--accent); padding-left: 1.3rem; }
+    ul { padding-left: 1.25rem; margin: 0; }
+    li { margin-bottom: .65rem; }
+    .sources { max-width: 78ch; }
+    .sources p { font-size: .94rem; }
+    .cta { padding: 1.4rem 0; border-block: 1px solid var(--line); }
+    .cta p:last-child { margin-bottom: 0; }
+    footer { padding-block: 1.5rem 2.5rem; font-size: .85rem; color: var(--muted); }
+    footer p { max-width: 90ch; }
+    [hidden] { display: none !important; }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 2rem, 68rem); }
+      main { padding-top: 2rem; }
+      .explorer, .reading { grid-template-columns: 1fr; }
+      .reading { gap: 1rem; }
+      .result { border-left: 0; border-top: 1px solid var(--line); }
+      .controls, .result { padding: 1.3rem; }
+      .masthead { align-items: flex-start; }
+      th, td { padding: .7rem .45rem; }
+      table { font-size: .85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      body { color: #000; background: white; font-size: 10pt; }
+      .shell { width: 100%; }
+      main { padding-top: 1rem; }
+      h1 { font-size: 25pt; max-width: none; }
+      .skip, .selector { display: none !important; }
+      .explorer { display: block; }
+      .controls { display: none; }
+      .result { border: 0; }
+      .rate { font-size: 32pt; }
+      section { break-inside: avoid; margin-bottom: 1.5rem; }
+      .table-wrap { overflow: visible; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the resource</a>
+  <header>
+    <div class="shell masthead">
+      <span class="brand">SMB LOAN · RESEARCH NOTES</span>
+      <a href="https://smbloan.com.au/research/business-formation-survival-atlas">Read the survival atlas</a>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <p class="eyebrow">Reading Australian business statistics</p>
+    <h1>Business survival, with the starting count in view</h1>
+    <p class="intro">A survival percentage describes a particular group of businesses. Compare five employment groups from the same ABS entry cohort, with the original counts beside each rate.</p>
+    <p class="period">Entered in 2022–23 · Followed to June 2026 · Australia</p>
+
+    <section class="explorer-section" aria-labelledby="explorer-title">
+      <h2 id="explorer-title">Which group is the rate about?</h2>
+      <div class="explorer">
+        <div class="controls">
+          <div class="selector" hidden>
+            <label for="group">Employment group at the start</label>
+            <select id="group" aria-describedby="group-hint">
+              <option value="non-employing">Non-employing</option>
+              <option value="one-four">1–4 employees</option>
+              <option value="five-nineteen">5–19 employees</option>
+              <option value="twenty-ninetynine">20–199 employees</option>
+              <option value="two-hundred-plus">200+ employees</option>
+            </select>
+            <p id="group-hint" class="hint">Changing the group changes both counts. The cohort and June 2026 endpoint stay the same.</p>
+          </div>
+          <noscript><p>The interactive selector needs JavaScript. All five groups and their counts are available in the table below.</p></noscript>
+          <h3>The denominator</h3>
+          <p>The number of entrants in that group is the starting count. Divide the number that survived to June 2026 by that starting count, then multiply by 100.</p>
+        </div>
+        <div class="result" role="status" aria-live="polite" aria-atomic="true">
+          <h3 id="selected-label">Non-employing · survival to June 2026</h3>
+          <p class="rate" id="selected-rate">44.6%</p>
+          <dl class="counts">
+            <div><dt>Entrants in 2022–23</dt><dd id="selected-entrants">297,302</dd></div>
+            <div><dt>Survived to June 2026</dt><dd id="selected-survivors">132,708</dd></div>
+          </dl>
+          <p class="formula" id="selected-formula">132,708 ÷ 297,302 × 100 = 44.6%</p>
+          <p class="result-note" id="selected-note">“Non-employing” is an employment classification, not another name for sole trader. The rate is rounded to one decimal place.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading" aria-label="How to interpret the counts">
+      <div>
+        <h2>A higher rate can describe fewer businesses</h2>
+        <p>The 200+ employee group had 54 survivors from 69 entrants, giving 78.3%. The non-employing group had 132,708 survivors from 297,302 entrants, giving 44.6%. Keep those different starting counts visible when comparing the percentages.</p>
+      </div>
+      <div>
+        <h2>Combine counts to find the overall rate</h2>
+        <p>Across these five groups, 199,742 of 406,365 entrants survived to June 2026: <strong>49.2%</strong>. Averaging the five group percentages would give each group equal weight, even though their sizes differ.</p>
+        <p class="formula">199,742 ÷ 406,365 × 100 = 49.2%</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="table-title">
+      <h2 id="table-title">All five employment groups</h2>
+      <div class="table-wrap">
+        <table id="groups">
+          <caption>ABS Table 16: the 2022–23 entry cohort, followed to June 2026. Rates are rounded to one decimal place.</caption>
+          <thead><tr><th scope="col">Employment at the start</th><th scope="col" class="num">Entrants</th><th scope="col" class="num">Survivors</th><th scope="col" class="num">Survival</th></tr></thead>
+          <tbody>
+            <tr id="non-employing" data-source-row="6" data-entrants="297302" data-survivors="132708" data-rate="44.6" data-selected="true"><th scope="row">Non-employing</th><td class="num">297,302</td><td class="num">132,708</td><td class="num">44.6%</td></tr>
+            <tr id="one-four" data-source-row="8" data-entrants="99446" data-survivors="60729" data-rate="61.1"><th scope="row">1–4 employees</th><td class="num">99,446</td><td class="num">60,729</td><td class="num">61.1%</td></tr>
+            <tr id="five-nineteen" data-source-row="9" data-entrants="8359" data-survivors="5411" data-rate="64.7"><th scope="row">5–19 employees</th><td class="num">8,359</td><td class="num">5,411</td><td class="num">64.7%</td></tr>
+            <tr id="twenty-ninetynine" data-source-row="10" data-entrants="1189" data-survivors="840" data-rate="70.6"><th scope="row">20–199 employees</th><td class="num">1,189</td><td class="num">840</td><td class="num">70.6%</td></tr>
+            <tr id="two-hundred-plus" data-source-row="11" data-entrants="69" data-survivors="54" data-rate="78.3"><th scope="row">200+ employees</th><td class="num">69</td><td class="num">54</td><td class="num">78.3%</td></tr>
+          </tbody>
+          <tfoot><tr><th scope="row">All five groups</th><td class="num">406,365</td><td class="num">199,742</td><td class="num">49.2%</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="table-note">The total combines the five component groups once. Do not add the ABS “Total employing” subtotal again, or combine employment rows with the industry and state views of the same cohort.</p>
+    </section>
+
+    <section class="limits" aria-labelledby="limits-title">
+      <h2 id="limits-title">What these figures cannot tell you</h2>
+      <ul>
+        <li>ABS survival records continued activity within its business-register framework. It does not establish profit, adequate owner income or capacity to repay a loan.</li>
+        <li>An entry can include a reactivation. An exit can reflect closure, sale, restructuring or leaving the statistical scope. The complement of survival is not an insolvency rate.</li>
+        <li>These are historical cohort outcomes, not a current annual failure rate or the probability that a business starting today will survive.</li>
+        <li>Starting employment size does not establish that hiring causes survival. The cohort includes larger businesses; it is not restricted to small businesses or all registered ABN holders.</li>
+      </ul>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources and dates</h2>
+      <p>The Australian Bureau of Statistics produced the underlying observations in <a href="https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/jul2022-jun2026">Counts of Australian Businesses, including Entries and Exits, July 2022–June 2026</a>, released 18 August 2026. The <a href="https://www.abs.gov.au/methodologies/counts-australian-businesses-including-entries-and-exits-methodology/jul2022-jun2026">ABS methodology</a> explains the population and activity measures.</p>
+      <p>Counts and published rates were checked against <a href="https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/jul2022-jun2026/8165DC01.xlsx">Table 16 of the original ABS workbook (XLSX)</a>: rows 6, 8, 9, 10 and 11; columns B (entrants), G (survivors) and H (rate). The combined counts also match Table 3, row 26. This page was prepared on 13 November 2026. These are June 2026 outcomes, not November observations.</p>
+      <p>SMB Loan selected and explained the figures in its atlas, last checked on 10 October 2026. This page is an original teaching aid using five factual source rows; it is not an ABS product, an original survey or an independently peer-reviewed study.</p>
+    </section>
+
+    <section class="cta" aria-labelledby="further-title">
+      <h2 id="further-title">Explore the source-linked extract</h2>
+      <p>The <a href="https://smbloan.com.au/research/business-formation-survival-atlas">SMB Loan business formation and survival atlas</a> includes the industry, state and employment views. Its <a href="https://smbloan.com.au/research-data/business-survival-atlas-june-2026.csv">36-row CSV</a> preserves the cohort and source reference for each row. Those dimensions overlap.</p>
+      <p><a href="https://github.com/thisismyuserdealwithit/smbloan-business-survival-notes">View the interpretation notes and reproducible CSV checker</a>. Data and linked works remain subject to their respective source terms; no blanket reuse licence is asserted.</p>
+    </section>
+  </main>
+  <footer class="shell">
+    <p>Prepared by <strong>Joe, AI assistant at Finofin</strong>, for SMB Loan. SMB Loan is an information publisher operated by Finofin LTD, an Israeli company, and is not a lender or broker. It may receive referral fees from Lend. This resource provides statistical explanation, not a borrowing recommendation. <a href="https://smbloan.com.au/disclaimer">Publisher and commercial disclosure</a>.</p>
+    <p>The selector runs entirely in your browser. This page contains no analytics, cookies, external scripts or external fonts. Following a link opens a separate service with its own practices.</p>
+  </footer>
+  <script>
+    (() => {
+      'use strict';
+      const selector = document.getElementById('group');
+      const rows = Array.from(document.querySelectorAll('#groups tbody tr'));
+      const formatCount = new Intl.NumberFormat('en-AU');
+      const notes = {
+        'non-employing': '“Non-employing” is an employment classification, not another name for sole trader.',
+        'one-four': 'The group reflects employment size at the start. This difference does not show that hiring causes survival.',
+        'five-nineteen': 'The group reflects employment size at the start. This difference does not show that hiring causes survival.',
+        'twenty-ninetynine': 'The group reflects employment size at the start. This difference does not show that hiring causes survival.',
+        'two-hundred-plus': 'This group contains only 69 entrants. Keep that starting count beside its 78.3% result.'
+      };
+      function update() {
+        const row = rows.find(item => item.id === selector.value);
+        if (!row) return;
+        const entrants = Number(row.dataset.entrants);
+        const survivors = Number(row.dataset.survivors);
+        const rate = (survivors / entrants * 100).toFixed(1);
+        const label = row.querySelector('th').textContent;
+        document.getElementById('selected-label').textContent = label + ' · survival to June 2026';
+        document.getElementById('selected-rate').textContent = rate + '%';
+        document.getElementById('selected-entrants').textContent = formatCount.format(entrants);
+        document.getElementById('selected-survivors').textContent = formatCount.format(survivors);
+        document.getElementById('selected-formula').textContent = formatCount.format(survivors) + ' ÷ ' + formatCount.format(entrants) + ' × 100 = ' + rate + '%';
+        document.getElementById('selected-note').textContent = notes[row.id] + ' The rate is rounded to one decimal place.';
+        rows.forEach(item => item.dataset.selected = String(item === row));
+      }
+      selector.addEventListener('change', update);
+      document.querySelector('.selector').hidden = false;
+      update();
+    })();
+  </script>
+</body>
+</html>
+

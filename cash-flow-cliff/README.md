@@ -6,6 +6,10 @@ A business can finish a month with cash in the bank while an earlier bill remain
 
 All businesses, payment dates and amounts are fictional. This educational material is separate from the observed business-survival statistics elsewhere in this repository. It is not representative Australian business data or a borrowing recommendation.
 
+## Would a weekly balance check catch payroll day?
+
+The [weekly cash-check lab](weekly-balance-check.ipynb) lets learners pick the day a bookkeeper reviews the bank balance. In the fictional day-15 receipt case, six of seven weekly schedules understate the cash needed during the month. The Python notebook includes the daily ledger, editable reporting dates and saved results. It runs offline with the standard library.
+
 ## Check the calculations
 
 With Node.js 22 or later, run `node --test engine.test.mjs` from this directory. The tests cover the three baseline results, daily cash movements, deposit conservation, payments beyond day 30, cent rounding, malformed inputs and 3,366 delay/deposit combinations.

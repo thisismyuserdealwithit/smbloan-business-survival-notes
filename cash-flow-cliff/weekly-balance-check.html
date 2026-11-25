@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="See which cash shortfalls disappear from a weekly report. A free Australian-dollar cash-budget exercise with a daily ledger and an editable Python notebook.">
+<title>Would a weekly balance check catch payroll day? | Cash-flow Cliff</title>
+<link rel="canonical" href="https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/weekly-balance-check.html">
+<style>
+*{box-sizing:border-box}html{font:17px/1.5 'Source Sans 3',Arial,sans-serif;background:#f6f4ed;color:#1a3632}
+body{margin:0}main{max-width:61rem;margin:auto;padding:2rem clamp(1rem,5vw,4rem) 4rem}
+a{color:#075e52;text-underline-offset:.15em}header{border-bottom:2px solid #1d5549;padding-bottom:1.2rem}
+h1,h2{font-family:'Source Serif 4',Georgia,serif;line-height:1.1}h1{max-width:17ch;font-size:clamp(2.3rem,6vw,4.35rem);margin:1.2rem 0 .7rem}
+h2{margin:1.8rem 0 .65rem;font-size:1.7rem}p{max-width:72ch}fieldset{margin:1.3rem 0;border:1px solid #819a8e;border-radius:6px;padding:1rem}
+legend,label{font-weight:700}.controls{display:flex;gap:1.2rem 2rem;flex-wrap:wrap}
+select{display:block;min-width:8rem;font:inherit;padding:.35rem;color:inherit;background:white;border:1px solid #70887f;border-radius:3px}
+.result{display:block;background:#e2ede5;border-left:.3rem solid #19614e;padding:1rem;font-size:1.05rem}
+.calendar{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:1rem 0;padding:0}
+.calendar li{min-height:3.25rem;background:#fefdf8;border:1px solid #c2cec5;padding:.24rem;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.calendar li.negative{color:#72281c;background:#f9e5db}.calendar li.inspected{box-shadow:inset 0 0 0 2px #215a4c}
+.calendar small{font-size:.64rem}.tablewrap{overflow-x:auto}table{border-collapse:collapse;min-width:19rem;width:min(100%,32rem)}
+th,td{border-bottom:1px solid #c2cec5;text-align:right;padding:.38rem}th:first-child,td:first-child{text-align:left}
+summary{font-weight:bold;cursor:pointer}footer{margin-top:2rem;border-top:1px solid #9daea3;font-size:.9rem}
+@media print{html{background:#fff;font-size:11pt}main{max-width:unset;padding:0}fieldset{break-inside:avoid}.calendar{break-inside:avoid}.calendar li{min-height:2.5rem}}
+</style>
+</head>
+<body><main>
+<header><a href="./">Cash-flow Cliff</a><h1>Would a weekly balance check catch payroll day?</h1>
+<p>A supplier starts with A$5,000. Materials cost A$6,000 on day 7, staff get A$4,000 on day 14 and overheads come to A$2,000 on day 21. There’s one customer invoice for A$15,000. Pick the day it gets paid and the day the bookkeeper starts checking.</p></header>
+<section aria-labelledby="experiment"><h2 id="experiment">Choose the two dates</h2>
+<fieldset><legend>Reporting calendar</legend><div class="controls">
+<label>Customer pays on <select id="receipt"></select></label>
+<label>First weekly check on <select id="inspection"></select></label></div></fieldset>
+<output id="result" class="result" aria-live="polite">With the receipt on day 15 and the first check on day 1, the weekly report shows a funding gap of A$1,000. The daily gap reaches A$5,000 on day 14. The report misses A$4,000.</output>
+<noscript><p>The example above uses weekly checks on days 1, 8, 15, 22 and 29. Switch on JavaScript to try other dates, or use the downloadable notebook below.</p></noscript>
+<p>The outlined days are on the bookkeeper’s report. “Short” marks a day the business cannot cover all scheduled payments. The bookkeeper also checks opening and closing cash.</p>
+<ol class="calendar" id="calendar" aria-label="Daily cash balances"></ol>
+<details><summary>Read the daily balances and check dates</summary><div class="tablewrap"><table><thead><tr><th scope="col">Day</th><th scope="col">Closing balance</th><th scope="col">On report?</th></tr></thead><tbody id="ledger"></tbody></table></div></details></section>
+<h2>Try moving the receipt by one day</h2><p>Compare a receipt on day 14 with one on day 15. The month closes at A$8,000 in both cases. With a day-15 receipt, only one of the seven weekly schedules catches the full A$5,000 shortfall. Which schedule is it?</p>
+<details><summary>Show the teacher’s answer</summary><p>Start the weekly checks on day 7. That puts both day 7 and day 14 on the report. The other six schedules still pick up an earlier A$1,000 gap, but miss the extra A$4,000 needed for payroll on day 14.</p></details>
+<h2>Run the exercise with your class</h2>
+<p>The <a href="weekly-balance-check.ipynb" download>editable Python notebook</a> includes all three Cash-flow Cliff cases and runs offline. The <a href="timing-study.html">receipt timing study</a> gives the cash movements and deposit assumptions. For a separate exercise in converting turnover and an expense ratio into days of operating cash, see <a href="https://smbloan.com.au/research/working-capital-by-industry">SMB Loan’s working-capital model</a>.</p>
+<footer><p>Joe, an AI assistant at Finofin, made this lesson for SMB Loan. The amounts and dates are fictional. The model nets all transactions at day end and leaves any day-31 receipt outstanding. A negative balance is an unfunded payment. The publisher may receive referral income from Lend. <a href="LICENSE.txt">Reuse terms</a>.</p></footer>
+</main>
+<script>
+const receipt = document.getElementById('receipt');
+const inspection = document.getElementById('inspection');
+function options(field, start, end, selected) {
+  for (let day = start; day <= end; day++) field.add(new Option('Day ' + day, day, day === selected, day === selected));
+}
+options(receipt, 10, 31, 15);
+options(inspection, 1, 7, 1);
+const money = new Intl.NumberFormat('en-AU', {maximumFractionDigits:0});
+function amount(value) { return (value < 0 ? '−A$' : 'A$') + money.format(Math.abs(value)); }
+function render() {
+  const payDay = Number(receipt.value), first = Number(inspection.value);
+  const calendar = document.getElementById('calendar'), table = document.getElementById('ledger');
+  let cash = 5000, dailyLow = cash, reportLow = cash, lowestDay = 0;
+  calendar.replaceChildren(); table.replaceChildren();
+  for (let day = 0; day <= 30; day++) {
+    if (day === payDay) cash += 15000;
+    cash -= ({7:6000,14:4000,21:2000})[day] || 0;
+    const checked = day === 0 || day === 30 || (day >= first && (day-first) % 7 === 0);
+    if (cash < dailyLow) { dailyLow = cash; lowestDay = day; }
+    if (checked) reportLow = Math.min(reportLow,cash);
+    const row = table.insertRow();
+    for (const entry of [String(day),amount(cash),checked ? 'Yes' : 'No']) row.insertCell().textContent=entry;
+    if (day === 0) continue;
+    const cell=document.createElement('li'), label=document.createElement('small');
+    cell.classList.toggle('negative',cash<0); cell.classList.toggle('inspected',checked);
+    cell.setAttribute('aria-label','Day '+day+', '+amount(cash)+(checked?', checked':''));
+    cell.append(String(day)); label.textContent=cash<0?'Short':'In funds'; cell.append(label); calendar.append(cell);
+  }
+  const dailyGap=Math.max(0,-dailyLow), reportGap=Math.max(0,-reportLow);
+  document.getElementById('result').textContent='The weekly report shows a funding gap of '+amount(reportGap)+'. The daily gap reaches '+amount(dailyGap)+' on day '+lowestDay+'. The report misses '+amount(dailyGap-reportGap)+'. Closing cash is '+amount(cash)+'.';
+}
+receipt.addEventListener('change',render); inspection.addEventListener('change',render); render();
+</script></body></html>
+

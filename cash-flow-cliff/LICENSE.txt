@@ -1,0 +1,49 @@
+CASH-FLOW CLIFF
+Release: 25 November 2026
+
+1. CODE AND ACCOMPANYING DOCUMENTATION: MIT LICENSE
+
+Copyright (c) 2026 Finofin LTD
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+2. ORIGINAL FICTIONAL SCENARIO DATA: CC0 1.0 UNIVERSAL
+
+To the extent Finofin LTD holds copyright or related rights in the original
+fictional scenario data for Cash-flow Cliff, Finofin LTD dedicates those data
+to the public domain under CC0 1.0 Universal, including its fallback licence:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+This applies to the invented scenario names, descriptions, amounts, dates,
+control assumptions, expected results and explanations supplied in
+scenarios.json and the corresponding scenario data in engine.js. The engine
+implementation remains under MIT. You may reuse and adapt the fictional data
+without seeking permission or providing attribution. They are educational
+examples, not observations of actual businesses.
+
+3. SCOPE AND LINKS
+
+No promotional backlink is a condition of either licence. Retaining the MIT
+copyright and permission notice is required when distributing code or
+documentation as described above; that notice is not a required website link.
+
+These licences do not cover third-party websites, linked government content,
+third-party datasets, logos, trade marks or material not created for this
+project. A source link does not imply endorsement by its publisher. No
+financial, legal, tax or investment advice is supplied by this project.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A ten-minute fictional cash-flow exercise: predict a shortfall, change payment timing and explain why closing cash is not profit.">
+  <title>Cash-flow Cliff: a ten-minute educator guide</title>
+  <style>
+    :root{--ink:#142c2b;--muted:#536762;--paper:#faf7ef;--line:#d6dcd1;--green:#d9ed7b}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main,header,footer{width:min(100% - 40px,850px);margin:auto}header{padding:24px 0;border-bottom:1px solid var(--line)}a{color:inherit;text-underline-offset:4px}a:focus-visible{outline:3px solid #b05517;outline-offset:4px}.eyebrow{font-size:12px;letter-spacing:1.6px;font-weight:750;text-transform:uppercase}h1,h2{font-family:Georgia,serif;font-weight:500;line-height:1.12}h1{font-size:clamp(36px,6vw,58px);margin:18px 0}h2{font-size:29px;margin-top:36px}h3{font-size:19px}.lead{font-size:20px}.callout{background:var(--green);padding:22px;border-radius:8px}.button{display:inline-block;padding:10px 17px;border-radius:5px;background:var(--ink);color:white;text-decoration:none;font-weight:650}.fine,footer{font-size:14px;color:var(--muted)}section{margin:30px 0}li{margin-bottom:10px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}caption{text-align:left;font-weight:700;margin-bottom:12px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left}th:last-child,td:last-child{text-align:right}footer{border-top:1px solid var(--line);padding:24px 0 40px}@media print{body{background:white;color:black;font-size:11pt}header,.button{display:none}main,footer{width:100%}h1{font-size:25pt}h2{font-size:18pt;break-after:avoid}section,.table-wrap{break-inside:avoid}.callout{border:1px solid #777;background:white}a{color:black}}
+  </style>
+</head>
+<body>
+<header><a href="https://cash-flow-cliff.surge.sh/">Cash-flow Cliff</a> / Educator guide</header>
+<main>
+  <p class="eyebrow">Ten-minute exercise · Fictional AUD amounts · 25 November 2026</p>
+  <h1>The closing balance hides the difficult day.</h1>
+  <p class="lead">Help learners distinguish a positive month-end balance from having enough cash on each payment date. Use a screen or work through the example on paper.</p>
+  <p><a class="button" href="https://cash-flow-cliff.surge.sh/">Open the game</a></p>
+  <section class="callout" aria-labelledby="objective">
+    <h2 id="objective" style="margin-top:0">The question to answer</h2>
+    <p>A fictional business starts with A$5,000 and finishes with A$8,000. Can it cover every scheduled payment without additional cash? Ask learners to commit to an answer before opening the daily balances.</p>
+  </section>
+  <section aria-labelledby="run">
+    <h2 id="run">Run the exercise</h2>
+    <ol>
+      <li><strong>Minutes 0–2: predict.</strong> Select “The late customer”. Leave deposit, customer delay and extra opening cash at zero. Identify the first date on which the business could run short.</li>
+      <li><strong>Minutes 2–4: inspect.</strong> Reveal the daily balances. Compare the lowest balance with the closing balance. Explain the A$1,000 shortfall on day 7.</li>
+      <li><strong>Minutes 4–7: change one thing.</strong> First try a 10% deposit, then reset it. Next delay the customer by 15 days. Finally reset the delay and add A$1,000 of extra opening cash. Predict each result before reading it.</li>
+      <li><strong>Minutes 7–9: cross the boundary.</strong> With no deposit or extra cash, set the delay to 21 days. Find the receipt due on day 31 and explain why it is pending rather than included in day 30 cash.</li>
+      <li><strong>Minute 9–10: explain.</strong> Ask each learner to finish: “The month-end balance alone cannot tell me…” Then name one real obligation or timing detail the exercise leaves out.</li>
+    </ol>
+  </section>
+  <section aria-labelledby="controls">
+    <h2 id="controls">What the controls mean</h2>
+    <p><strong>Deposit:</strong> a hypothetical agreed share of the selected invoice arrives on day 1. The later receipt falls by the same amount; total receipts do not increase. Customer acceptance is not assumed outside the exercise.</p>
+    <p><strong>Delay:</strong> the selected invoice’s remaining payment moves later by the chosen number of days. A receipt after day 30 remains pending outside the window.</p>
+    <p><strong>Extra opening cash:</strong> hypothetical funds already available on day 0. The game does not assume borrowing or explain where those funds come from.</p>
+  </section>
+  <section aria-labelledby="answers">
+    <h2 id="answers">Answer key</h2>
+    <div class="table-wrap"><table>
+      <caption>Baseline: “The late customer”, all controls at zero</caption>
+      <thead><tr><th scope="col">Day</th><th scope="col">Cash movement</th><th scope="col">Balance</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">0</th><td>Opening cash</td><td>A$5,000</td></tr>
+        <tr><th scope="row">7</th><td>Pay A$6,000</td><td>−A$1,000</td></tr>
+        <tr><th scope="row">10</th><td>Receive A$15,000</td><td>A$14,000</td></tr>
+        <tr><th scope="row">14</th><td>Pay A$4,000</td><td>A$10,000</td></tr>
+        <tr><th scope="row">21</th><td>Pay A$2,000</td><td>A$8,000</td></tr>
+        <tr><th scope="row">30</th><td>No further movement</td><td>A$8,000</td></tr>
+      </tbody>
+    </table></div>
+    <p>A 10% deposit moves A$1,500 to day 1, making the lowest balance A$500 while closing cash stays A$8,000. A 15-day delay pushes the receipt to day 25: the low falls to −A$7,000, but closing cash remains A$8,000. An extra A$1,000 at the start, with no other change, raises the baseline low to zero and the close to A$9,000.</p>
+    <p>A 21-day delay moves the whole receipt to day 31. Day 30 cash is −A$7,000 and A$15,000 remains pending. The model has not written off that receipt.</p>
+  </section>
+  <section aria-labelledby="limits">
+    <h2 id="limits">Keep the lesson within the model</h2>
+    <p>Day 0 is starting cash. Days 1–30 show end-of-day balances after netting that day’s movements; the model cannot reveal an intraday shortfall. A negative balance identifies an unfunded gap, not available overdraft credit. Closing cash is not profit.</p>
+    <p>All businesses, amounts and dates are invented. Unlisted obligations, tax calculations, interest, financing costs and legal deadlines are omitted. This is a teaching exercise, not financial advice or a forecast for a real business.</p>
+    <p>For context, see <a href="https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement">business.gov.au’s cash-flow statement guide</a>, checked 25 November 2026. It explains forecasting receipts, payments and closing cash; it does not supply or validate these scenarios. <a href="https://smbloan.com.au/research/">SMB Loan’s research library</a> contains separate, sourced reports.</p>
+  </section>
+</main>
+<footer>
+  <p>Prepared by Joe, AI assistant at Finofin. Published by SMB Loan, a Finofin LTD publication based in Israel. SMB Loan is an information publisher, not a lender or broker, and may receive referral fees from Lend.</p>
+  <p>Code and accompanying documentation: MIT. Original fictional scenario data: CC0 1.0. No promotional link is required for reuse. See <a href="LICENSE.txt">the licence</a> and <a href="README.md">project notes</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # Cash-flow Cliff: fictional teaching scenarios
 
-[Play Cash-flow Cliff](https://cash-flow-cliff.surge.sh/) or download the [free offline teaching kit](https://cash-flow-cliff.surge.sh/cash-flow-cliff-kit.zip). Release: **25 November 2026**.
+[Play Cash-flow Cliff](https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/) or download the [free offline teaching kit](https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/cash-flow-cliff-kit.zip). Release: **25 November 2026**.
 
-A business can finish a month with cash in the bank while an earlier bill remains unfunded. These three invented Australian-dollar scenarios let learners test that timing problem. This folder contains the calculation engine, source data, worked CSV ledgers, chart, educator guide and tests. The interactive interface is hosted at the game link above.
+A business can finish a month with cash in the bank while an earlier bill remains unfunded. These three invented Australian-dollar scenarios let learners test that timing problem. This folder contains the calculation engine, source data, worked CSV ledgers, chart, educator guide and tests. The interactive interface is served from this folder through GitHub Pages.
 
 All businesses, payment dates and amounts are fictional. This educational material is separate from the observed business-survival statistics elsewhere in this repository. It is not representative Australian business data or a borrowing recommendation.
 
@@ -16,7 +16,7 @@ Deposits bring part of a receipt forward and reduce its later balance. They do n
 
 ## Teach and reuse
 
-The [educator guide](https://cash-flow-cliff.surge.sh/educator-guide.html) gives a ten-minute exercise. [scenarios.json](scenarios.json) records the scenarios and assumptions. The two CSV files contain 31 daily rows each, including opening day 0. [cash-flow-cliff-editorial.svg](cash-flow-cliff-editorial.svg) compares the original and delayed late-customer examples.
+The [educator guide](https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/educator-guide.html) gives a ten-minute exercise. [scenarios.json](scenarios.json) records the scenarios and assumptions. The two CSV files contain 31 daily rows each, including opening day 0. [cash-flow-cliff-editorial.svg](cash-flow-cliff-editorial.svg) compares the original and delayed late-customer examples.
 
 Code and documentation are MIT licensed. Original fictional scenario data are CC0. See [LICENSE.txt](LICENSE.txt). No promotional backlink is required. Third-party material retains its own rights.
 

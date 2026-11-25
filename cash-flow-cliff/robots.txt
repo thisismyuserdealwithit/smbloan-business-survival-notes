@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/sitemap.xml

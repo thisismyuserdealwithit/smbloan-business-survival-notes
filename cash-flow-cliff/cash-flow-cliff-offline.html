@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cash-flow Cliff Offline | A 30-day challenge from SMB Loan</title>
+<meta name="description" content="A fictional business can finish the month with more cash and still run out on the way. Find the shortfall, move the payment dates and test a fix in this free cash-flow challenge.">
+<meta name="robots" content="noindex,follow"><meta name="theme-color" content="#142c2b">
+<meta property="og:title" content="A good month. A bad Tuesday. | Cash-flow Cliff">
+<meta property="og:description" content="Find the day the cash runs short. A free, open educational simulation from SMB Loan.">
+<link rel="canonical" href="https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/">
+<meta property="og:url" content="https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/">
+<meta property="og:type" content="website">
+<style>
+:root{--ink:#142c2b;--muted:#536762;--paper:#faf7ef;--line:#d6dcd1;--green:#d9ed7b;--red:#a23a2a;--soft:#edf0e7}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}button,input,select,textarea{font:inherit}button,a.button{cursor:pointer;border:1px solid var(--ink);border-radius:5px;padding:11px 17px;background:var(--ink);color:white;font-weight:650;display:inline-block;text-decoration:none}button:hover,a.button:hover{background:#274d43}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #b05517;outline-offset:4px}button.secondary{background:transparent;color:var(--ink)}button:disabled{cursor:default;opacity:.5}header{max-width:1200px;margin:auto;padding:22px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.brand{font-weight:800;text-decoration:none}.brand small{font-weight:400;margin-left:9px}.nav{display:flex;gap:24px;font-size:14px}.wrap{max-width:1140px;margin:auto;padding:0 30px}.hero{padding:68px 0 42px;max-width:870px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:750;text-transform:uppercase}h1{font-family:Georgia,serif;font-size:clamp(40px,6vw,74px);font-weight:500;line-height:1.04;margin:16px 0 24px;letter-spacing:-2px}h1 em{font-style:normal;color:#547129}.lead{font-size:20px;max-width:660px;line-height:1.6}.fine{font-size:13px;color:var(--muted)}.tag{display:inline-block;border:1px solid var(--line);border-radius:30px;font-size:12px;padding:4px 11px;margin-right:7px}.topline{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}h2{font-family:Georgia,serif;font-weight:500;font-size:32px;line-height:1.2;margin:8px 0 15px}h3{font-size:19px;margin:0 0 10px}.stage{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:white}.scenario-tabs{display:flex;background:var(--soft);border-bottom:1px solid var(--line);overflow:auto}.scenario-tabs button{flex:1;border:0;border-radius:0;background:transparent;color:var(--muted);text-align:left;padding:18px 22px;min-width:170px;font-size:14px}.scenario-tabs button[aria-pressed=true]{background:var(--ink);color:white}.scenario-tabs span{display:block;opacity:.7;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.workspace{display:grid;grid-template-columns:300px 1fr}.controls{padding:27px;background:#f5f6f0;border-right:1px solid var(--line)}.controls p{font-size:14px}.field{display:block;margin-top:22px}.field label{font-size:13px;font-weight:700;display:block}.field output{float:right;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--ink);margin:12px 0 0}input[type=number],select{border:1px solid #9ba9a0;border-radius:4px;width:100%;padding:8px;background:white;color:var(--ink);margin-top:7px}.help{font-size:12px;color:var(--muted);display:block}.results{min-width:0;padding:28px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-bottom:1px solid var(--line);padding-bottom:22px}.stat small{display:block;font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:28px;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin:6px 0}.negative{color:var(--red)}.challenge{padding:17px 19px;background:#edf1dd;border-radius:5px;margin:20px 0}.challenge p{margin:4px 0 12px;font-size:14px}.guessrow{display:flex;gap:10px;align-items:end}.guessrow select{width:150px;margin:0}.feedback{font-size:14px;margin-top:12px;min-height:22px}.chart{width:100%;height:auto;display:block}.legend{display:flex;gap:18px;font-size:12px;color:var(--muted)}.legend i{display:inline-block;width:22px;border-top:3px solid var(--ink);margin-right:6px;vertical-align:middle}.legend i.base{border-color:#9ca69e;border-top-style:dashed}.status{font-size:14px;margin:15px 0 0;min-height:24px}.pending{font-size:13px;color:var(--red)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.actions button{padding:9px 13px;font-size:13px}.section{padding:60px 0;border-bottom:1px solid var(--line)}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:60px}.section p{max-width:680px}.number{font-size:46px;font-family:Georgia,serif;line-height:1;color:#6d8135}.notes{padding-left:19px}.notes li{padding:4px 0}details{border-top:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:650}.tablewrap{overflow:auto;max-height:370px;margin:16px 0}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{position:sticky;top:0;background:var(--soft)}textarea{width:100%;height:115px;border:1px solid var(--line);padding:12px;background:white;font:12px/1.5 monospace;resize:vertical}.notice{padding:18px;border-left:3px solid #839b3e;background:var(--soft);font-size:14px}.downloads{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px}.downloads a{font-size:14px}footer{max-width:1140px;margin:auto;padding:32px 30px 50px;font-size:13px;color:var(--muted)}footer p{max-width:820px}#toast{min-height:20px;font-size:13px;margin:10px 0}.sr{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}noscript{display:block;padding:20px;background:#ffe8dc}
+@media(max-width:800px){.workspace{grid-template-columns:1fr}.controls{border-right:0;border-bottom:1px solid var(--line)}.controls-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.controls-grid .field{margin-top:10px}.twocol{grid-template-columns:1fr;gap:30px}.hero{padding-top:42px}.results{padding:20px}.wrap{padding:0 18px}header{padding:18px}.nav{gap:12px}.brand small{display:none}.topline{display:block}.stat strong{font-size:23px}}
+@media(max-width:480px){.controls-grid{grid-template-columns:1fr}.stats{gap:10px}.stat strong{font-size:21px}.nav{font-size:12px}.guessrow{flex-wrap:wrap}.hero .lead{font-size:18px}}
+@media print{header,.nav,.controls,.actions,.challenge,.downloads,#embed-section,#toast{display:none!important}.hero{padding:20px 0}.section{padding:20px 0}.workspace{display:block}.stage{break-inside:avoid}.tablewrap{max-height:none;overflow:visible}body{font-size:11pt;background:white}.wrap{padding:0}.hero h1{font-size:32pt}footer{padding:15px 0}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="https://smbloan.com.au/research/" target="_blank" rel="noopener">SMB Loan <small>Free learning tools</small></a><nav class="nav"><a href="#play">Play the challenge</a><a href="#reuse">Use it in a workshop</a></nav></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">Cash-flow Cliff · A 30-day challenge</div><h1>A good month.<br><em>A bad Tuesday.</em></h1><p class="lead">The month ends with cash in the bank. That does not mean every bill gets paid on time. Spot the shortfall, then change the timing.</p><span class="tag">3 fictional businesses</span><span class="tag">No sign-up</span><span class="tag">Free to reuse</span><p class="fine">All amounts are illustrative Australian dollars. These are invented teaching scenarios, not survey findings, real businesses or borrowing recommendations.</p></section>
+<section id="play" aria-labelledby="playtitle"><div class="topline"><div><div class="eyebrow">Your challenge</div><h2 id="playtitle">Find the day the cash runs short.</h2></div><p class="fine">Day 0 is the opening balance. Days 1–30 are a fictional month.</p></div>
+<div class="stage"><div id="scenarios" class="scenario-tabs" aria-label="Choose a fictional business"></div><div class="workspace"><aside class="controls"><h3 id="scenario-title">Loading the scenario…</h3><p id="scenario-desc"></p><p id="opening" class="fine"></p><div class="controls-grid"><div class="field"><label for="delay">Customer pays later <output id="delay-out">0 days</output></label><input type="range" id="delay" min="0" max="21" value="0" step="1"><small class="help">Move the selected customer's balance payment, not every receipt.</small></div><div class="field"><label for="deposit">Customer deposit <output id="deposit-out">0%</output></label><input type="range" id="deposit" min="0" max="50" value="0" step="1"><small class="help">Move this share of the selected receipt to day 1. Total customer payment stays the same.</small></div><div class="field"><label for="buffer">Extra opening cash (AUD)</label><input type="number" id="buffer" min="0" max="20000" value="0" step="100"><small class="help">Hypothetical existing cash added at day 0. This is not a proposed loan.</small></div></div><div class="actions"><button class="secondary" id="reset">Reset this scenario</button></div><p class="fine">Changing a receipt date or deposit assumes the customer agrees. This exercise does not establish what is possible in a real contract.</p></aside><div class="results"><div class="stats" aria-live="polite"><div class="stat"><small>Lowest day-end balance</small><strong id="minimum">—</strong><small id="min-day"></small></div><div class="stat"><small>First day below zero</small><strong id="first">—</strong><small>After that day's net flows</small></div><div class="stat"><small>Cash at day 30</small><strong id="closing">—</strong><small>Receipts less payments to date</small></div></div>
+<div class="challenge"><strong>Before you reveal the curve</strong><p>Read the scheduled transactions below. Which day first ends below zero with these settings?</p><div class="guessrow"><label class="sr" for="guess">Your guess</label><select id="guess"><option value="none">Never below zero</option></select><button id="reveal">Check my guess</button></div><div id="feedback" class="feedback" aria-live="polite"></div></div>
+<div id="chart-box" hidden><div class="legend"><span><i></i>Your settings</span><span><i class="base"></i>Original scenario</span></div><svg id="chart" class="chart" viewBox="0 0 720 280" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Cash balance through the fictional month</title><desc id="chart-desc"></desc></svg><p class="status" id="status"></p><p class="pending" id="pending"></p></div>
+<details open><summary>Scheduled transactions</summary><p class="fine">Only flows inside the 30-day window appear here. Incoming cash is positive; outgoing cash is negative. Same-day items are netted, so this does not test intraday cash shortages.</p><div class="tablewrap"><table><caption class="sr">Dated scenario cash movements in Australian dollars</caption><thead><tr><th>Day</th><th>Cash in</th><th>Cash out</th><th class="balance-cell" hidden>Day-end cash</th></tr></thead><tbody id="transactions"></tbody></table></div></details>
+<div class="actions"><button class="secondary" id="download">Download this ledger (CSV)</button><button class="secondary" id="share">Copy this scenario link</button><button class="secondary" id="print">Print</button></div><p id="toast" role="status"></p></div></div></div><noscript>This challenge needs JavaScript for the interactive model. The <a href="scenarios.json">fictional source scenarios</a> and <a href="educator-guide.html">educator guide</a> are available without it.</noscript></section>
+<section class="section twocol"><div><div class="number">30</div><h2>The end of the month hides the middle.</h2><p>A closing balance adds up the month. A daily forecast checks whether cash arrives before the payments it must cover. Both calculations can be right while telling different stories.</p><p>This exercise changes payment timing and starting cash. It does not calculate profit, tax, loan pricing, default probability or a lender's assessment.</p></div><div><h3>What to try</h3><ol class="notes"><li>Guess the first negative day before opening the curve.</li><li>Delay the selected customer's payment by seven days. Watch the lowest balance.</li><li>Bring part of that payment forward as a deposit. Check what changes and what does not.</li><li>Try the smallest extra opening buffer that keeps every day-end balance at or above zero.</li></ol><p class="notice">A negative result is an unfunded cash gap in the model. The simulation continues to expose later dates; it does not assume a real bank would honour an overdrawn payment.</p></div></section>
+<section id="reuse" class="section twocol"><div><div class="eyebrow">For advisers, teachers and publishers</div><h2>Take the exercise with you.</h2><p>Run a ten-minute workshop, adapt a scenario or embed the interactive version. The code is MIT licensed. The original fictional scenario data is CC0. Credit is welcome; a promotional link is not a condition of reuse.</p><div class="downloads"><a href="educator-guide.html">Educator guide →</a><a href="scenarios.json" download>Scenario data (JSON) ↓</a><a href="https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/cash-flow-cliff-kit.zip" download>Offline teaching kit (ZIP) ↓</a><a href="late-customer-baseline.csv" download>Example ledger (CSV) ↓</a><a href="cash-flow-cliff-editorial.svg" download>Publisher chart (SVG) ↓</a><a href="LICENSE.txt">Reuse terms →</a></div><p class="fine">The offline kit includes a single-file version that works in a browser without an account or installation.</p></div><div id="embed-section"><h3>Embed it on your website</h3><p class="fine">An iframe loads this public tool from its host. The tool has no analytics, sign-up form or connection to a loan application. Hosting providers may process normal access logs.</p><textarea id="embed" readonly aria-label="HTML embed code"></textarea><div class="actions"><button class="secondary" id="copy-embed">Copy embed code</button></div></div></section>
+<section class="section"><h2>Methods and further reading</h2><p>Daily cash = previous day's balance + receipts − outgoings. The required extra buffer is the amount needed to bring the lowest modelled balance to zero. Payments shifted beyond day 30 remain pending and are excluded from that month's closing balance.</p><p>The scenarios were created for this exercise. They are not estimates of typical Australian businesses. Amounts represent simplified cash movements with no separate GST calculation, interest, financing, tax assessment, insolvency test or holiday adjustment.</p><p>For real-world context, see <a href="https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement" target="_blank" rel="noopener">business.gov.au's cash-flow statement guidance</a> and <a href="https://smbloan.com.au/research/working-capital-by-industry" target="_blank" rel="noopener">SMB Loan's working-capital model</a>. If you are comparing written finance offers, the <a href="https://smbloan.com.au/business-loan-offer-comparison" target="_blank" rel="noopener">SMB Loan offer worksheet</a> keeps repayment dates and fees visible.</p></section>
+</main><footer><p>Created by Joe, AI assistant at Finofin LTD, for <a href="https://smbloan.com.au/" target="_blank" rel="noopener">SMB Loan</a>. Published 25 November 2026.</p><p>SMB Loan is an information publisher, not a lender, broker or loan marketplace. It may receive referral fees from Lend. This educational exercise is general information and does not assess an individual's finances or recommend borrowing. <a href="https://smbloan.com.au/disclaimer" target="_blank" rel="noopener">Commercial disclosure</a>.</p></footer>
+<script>(()=>{
+/** Pure, deterministic 30-day educational cash-flow model. All money is AUD. */
+
+const model = Object.freeze({
+  schemaVersion: 1,
+  currency: 'AUD',
+  horizonDays: 30,
+  synthetic: true,
+  description: 'Every business, amount and payment date in these scenarios is invented. They illustrate cash timing, not typical Australian business performance.',
+  convention: 'Day 0 is starting cash. Days 1–30 show the end-of-day balance after netting all receipts and payments on that day. This can hide an intraday shortfall.',
+  depositConvention: 'A hypothetical agreed deposit arrives on day 1. It reduces the selected customer’s later payment by exactly the same amount. It is not extra revenue, and acceptance is not guaranteed.',
+  bufferConvention: 'Opening buffer is additional hypothetical cash already available at the start. The model does not assume borrowing or explain how that cash is obtained.',
+  negativeBalanceMeaning: 'A negative balance is an unfunded gap in this scenario. It does not mean an overdraft or other credit is available.',
+  horizonConvention: 'A delayed receipt after day 30 is reported separately. It is not included in the closing balance and is not assumed lost.',
+  limits: 'Amounts represent final cash movements. No GST or other tax calculation, interest, borrowing cost, legal payment deadline, eligibility assessment or personalised recommendation is modelled. Unlisted receipts, costs and obligations are omitted. Closing cash is not profit.',
+  sourceScope: 'The official sources support the cash-flow principles only. They do not supply or validate the invented scenario amounts, dates or deposit percentages.',
+  checkedOn: '2026-11-16',
+  releaseDate: '2026-11-25',
+  sources: [
+    {
+      title: 'Set up a cash flow statement — business.gov.au',
+      url: 'https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement',
+      supports: 'Forecast receipts and payments with their timing; closing cash equals opening cash plus receipts minus payments.'
+    },
+    {
+      title: 'Improve your cash flow — business.gov.au',
+      url: 'https://business.gov.au/finance/cash-flow/improve-your-cash-flow',
+      supports: 'Test timing changes in a forecast; upfront payments and special-order deposits are possible collection arrangements, subject to agreement.'
+    }
+  ],
+  relatedResources: [
+    {
+      title: 'SMB Loan working-capital research',
+      url: 'https://smbloan.com.au/research/working-capital-by-industry',
+      relation: 'Related expense-duration model; no industry benchmark values are imported into this game.'
+    },
+    {
+      title: 'SMB Loan offer-comparison worksheet',
+      url: 'https://smbloan.com.au/business-loan-offer-comparison',
+      relation: 'A separate tool for comparing written finance offers; this game does not compare or recommend loans.'
+    }
+  ],
+  disclosure: 'Created by Joe, an AI assistant at Finofin, for SMB Loan. SMB Loan is an information publisher, not a lender, broker or marketplace. It may receive referral income from Lend. This educational model has not received independent professional review.'
+});
+
+const scenarios = [
+  {
+    id: 'late_customer',
+    title: 'The late customer',
+    description: 'The month can finish with A$8,000 even though an earlier payment cannot be covered. Move one customer payment and inspect the lowest balance.',
+    hypothetical: true,
+    horizonDays: 30,
+    openingCash: 5000,
+    adjustableReceiptId: 'customer_invoice',
+    depositDay: 1,
+    receipts: [
+      { id: 'customer_invoice', day: 10, amount: 15000, label: 'Customer invoice' }
+    ],
+    outgoings: [
+      { id: 'materials', day: 7, amount: 6000, label: 'Materials payment' },
+      { id: 'staff', day: 14, amount: 4000, label: 'Staff payment' },
+      { id: 'overheads', day: 21, amount: 2000, label: 'Other operating payment' }
+    ],
+    prompt: 'Can a positive closing balance hide an earlier cash gap?',
+    lesson: 'With no extra buffer or deposit, cash first falls below zero on day 7. A 15-day delay deepens the minimum from −A$1,000 to −A$7,000 while day-30 cash remains A$8,000.',
+    baselineExpected: { minimumCash: -1000, firstNegativeDay: 7, closingCash: 8000, extraBufferNeeded: 1000 }
+  },
+  {
+    id: 'growing_order',
+    title: 'The growing order',
+    description: 'A new order adds A$20,000 of receipts and A$16,000 of specified payments, but the payments come first. Try a hypothetical deposit agreed before work begins.',
+    hypothetical: true,
+    horizonDays: 30,
+    openingCash: 5000,
+    adjustableReceiptId: 'new_order',
+    depositDay: 1,
+    receipts: [
+      { id: 'ordinary_customer', day: 10, amount: 10000, label: 'Existing customer receipt' },
+      { id: 'new_order', day: 28, amount: 20000, label: 'New order final payment' }
+    ],
+    outgoings: [
+      { id: 'order_materials', day: 3, amount: 12000, label: 'New order materials' },
+      { id: 'order_labour', day: 12, amount: 4000, label: 'New order labour payment' },
+      { id: 'ordinary_costs', day: 15, amount: 8000, label: 'Existing operating payments' }
+    ],
+    prompt: 'Why can an order that adds cash by month-end deepen the earlier gap?',
+    lesson: 'The order adds A$4,000 to closing cash after its two specified payments, but creates a minimum balance of −A$9,000. A 45% deposit moves A$9,000 to day 1 and removes that gap. This is a timing example, not a recommended deposit rate or a full profit calculation.',
+    baselineExpected: { minimumCash: -9000, firstNegativeDay: 3, closingCash: 11000, extraBufferNeeded: 9000 },
+    withoutNewOrder: { openingCash: 5000, totalReceipts: 10000, totalOutgoings: 8000, closingCash: 7000, minimumCash: 5000 }
+  },
+  {
+    id: 'lumpy_costs',
+    title: 'The lumpy costs',
+    description: 'A$20,000 arrives and A$18,000 leaves during the month, but rent and an equipment payment arrive before most receipts. Monthly totals hide the concentration.',
+    hypothetical: true,
+    horizonDays: 30,
+    openingCash: 6000,
+    adjustableReceiptId: 'project_invoice',
+    depositDay: 1,
+    receipts: [
+      { id: 'sales_first', day: 10, amount: 5000, label: 'First customer receipts' },
+      { id: 'sales_second', day: 20, amount: 5000, label: 'Second customer receipts' },
+      { id: 'project_invoice', day: 24, amount: 10000, label: 'Project invoice' }
+    ],
+    outgoings: [
+      { id: 'rent', day: 1, amount: 4000, label: 'Rent payment' },
+      { id: 'equipment', day: 4, amount: 6000, label: 'One-off equipment payment' },
+      { id: 'staff_first', day: 7, amount: 2000, label: 'First staff payment' },
+      { id: 'staff_second', day: 14, amount: 2000, label: 'Second staff payment' },
+      { id: 'staff_third', day: 21, amount: 2000, label: 'Third staff payment' },
+      { id: 'staff_fourth', day: 28, amount: 2000, label: 'Fourth staff payment' }
+    ],
+    prompt: 'Does A$2,000 more coming in than going out mean every payment is covered?',
+    lesson: 'The monthly net inflow is positive, yet the lowest daily balance is −A$6,000. Even moving 50% of the project invoice to day 1 leaves an A$1,000 gap. Starting cash, payment timing and monthly totals answer different questions.',
+    baselineExpected: { minimumCash: -6000, firstNegativeDay: 4, closingCash: 8000, extraBufferNeeded: 6000 }
+  }
+];
+
+function deepFreeze(value) {
+  if (value && typeof value === 'object' && !Object.isFrozen(value)) {
+    for (const child of Object.values(value)) deepFreeze(child);
+    Object.freeze(value);
+  }
+  return value;
+}
+deepFreeze(scenarios);
+
+function boundedNumber(value, name, minimum, maximum, integer = false) {
+  if (typeof value !== 'number' || !Number.isFinite(value) || value < minimum || value > maximum || (integer && !Number.isInteger(value))) {
+    throw new RangeError(`${name} must be ${integer ? 'an integer' : 'a number'} from ${minimum} to ${maximum}.`);
+  }
+  return value;
+}
+
+function toCents(amount, name) {
+  boundedNumber(amount, name, 0, 100000000);
+  const cents = Math.round(amount * 100);
+  if (Math.abs(amount * 100 - cents) > 0.000001) throw new RangeError(`${name} must have at most two decimal places.`);
+  return cents;
+}
+
+function validateScenario(scenario) {
+  if (!scenario || typeof scenario !== 'object' || scenario.horizonDays !== 30) throw new TypeError('A 30-day scenario is required.');
+  toCents(scenario.openingCash, 'scenario.openingCash');
+  boundedNumber(scenario.depositDay, 'scenario.depositDay', 1, 30, true);
+  if (!Array.isArray(scenario.receipts) || !Array.isArray(scenario.outgoings)) throw new TypeError('Scenario receipts and outgoings must be arrays.');
+  if (scenario.receipts.length + scenario.outgoings.length > 1000) throw new RangeError('A scenario may contain at most 1000 events.');
+  const ids = new Set();
+  for (const event of [...scenario.receipts, ...scenario.outgoings]) {
+    if (!event || typeof event.id !== 'string' || !event.id || ids.has(event.id)) throw new TypeError('Each event must have a unique non-empty id.');
+    ids.add(event.id);
+    boundedNumber(event.day, `${event.id}.day`, 1, 30, true);
+    if (toCents(event.amount, `${event.id}.amount`) <= 0) throw new RangeError('Event amounts must be positive.');
+  }
+  const adjustable = scenario.receipts.find(event => event.id === scenario.adjustableReceiptId);
+  if (!adjustable) throw new TypeError('The adjustable receipt must exist in receipts.');
+  if (scenario.depositDay > adjustable.day) throw new RangeError('Deposit day cannot follow the original receipt day.');
+}
+
+/**
+ * @param {object|string} scenario Preset object or preset id.
+ * @param {{invoiceDelayDays?: number, depositPercent?: number, openingBuffer?: number}} settings
+ * @returns {{days: Array<{day:number,cash:number,inflow:number,outflow:number}>, summary: object, scheduledEvents: Array<object>, pendingReceipts: Array<object>, settings: object}}
+ * All result money fields are AUD; calculations use integer cents internally.
+ * minimumCash includes day 0. extraBufferNeeded is additional cash beyond the
+ * selected openingBuffer that would remove every end-of-day negative balance.
+ */
+function simulate(scenario, settings = {}) {
+  const chosen = typeof scenario === 'string' ? scenarios.find(item => item.id === scenario) : scenario;
+  validateScenario(chosen);
+  if (!settings || typeof settings !== 'object' || Array.isArray(settings)) throw new TypeError('settings must be an object.');
+  for (const key of Object.keys(settings)) {
+    if (!['invoiceDelayDays', 'depositPercent', 'openingBuffer'].includes(key)) throw new TypeError(`Unknown setting: ${key}`);
+  }
+  const values = {
+    invoiceDelayDays: boundedNumber(settings.invoiceDelayDays ?? 0, 'invoiceDelayDays', 0, 21, true),
+    depositPercent: boundedNumber(settings.depositPercent ?? 0, 'depositPercent', 0, 50, true),
+    openingBuffer: boundedNumber(settings.openingBuffer ?? 0, 'openingBuffer', 0, 20000)
+  };
+  const openingCents = toCents(chosen.openingCash, 'openingCash') + toCents(values.openingBuffer, 'openingBuffer');
+  const scheduled = [];
+  for (const receipt of chosen.receipts) {
+    const cents = toCents(receipt.amount, receipt.id);
+    if (receipt.id === chosen.adjustableReceiptId) {
+      // Round the deposit once to the nearest cent; remainder preserves the total.
+      const deposit = Math.round(cents * values.depositPercent / 100);
+      if (deposit > 0) scheduled.push({ id: `${receipt.id}_deposit`, label: `${receipt.label} — agreed deposit`, day: chosen.depositDay, cents: deposit, type: 'receipt' });
+      scheduled.push({ id: receipt.id, label: receipt.label, day: receipt.day + values.invoiceDelayDays, cents: cents - deposit, type: 'receipt' });
+    } else {
+      scheduled.push({ id: receipt.id, label: receipt.label, day: receipt.day, cents, type: 'receipt' });
+    }
+  }
+  for (const outgoing of chosen.outgoings) scheduled.push({ id: outgoing.id, label: outgoing.label, day: outgoing.day, cents: toCents(outgoing.amount, outgoing.id), type: 'outgoing' });
+  scheduled.sort((a, b) => a.day - b.day || a.id.localeCompare(b.id));
+  const days = [{ day: 0, cash: openingCents / 100, inflow: 0, outflow: 0 }];
+  let cash = openingCents;
+  let minimum = openingCents;
+  let firstNegativeDay = null;
+  let totalInflow = 0;
+  let totalOutflow = 0;
+  for (let day = 1; day <= chosen.horizonDays; day += 1) {
+    let inflow = 0;
+    let outflow = 0;
+    for (const event of scheduled) {
+      if (event.day !== day) continue;
+      if (event.type === 'receipt') inflow += event.cents;
+      else outflow += event.cents;
+    }
+    cash += inflow - outflow;
+    totalInflow += inflow;
+    totalOutflow += outflow;
+    minimum = Math.min(minimum, cash);
+    if (cash < 0 && firstNegativeDay === null) firstNegativeDay = day;
+    days.push({ day, cash: cash / 100, inflow: inflow / 100, outflow: outflow / 100 });
+  }
+  const asPublicEvent = ({ cents, ...event }) => ({ ...event, amount: cents / 100 });
+  const pending = scheduled.filter(event => event.type === 'receipt' && event.day > chosen.horizonDays);
+  return {
+    scenarioId: chosen.id,
+    settings: values,
+    days,
+    summary: {
+      openingCash: openingCents / 100,
+      minimumCash: minimum / 100,
+      firstNegativeDay,
+      closingCash: cash / 100,
+      extraBufferNeeded: Math.max(0, -minimum) / 100,
+      totalInflow: totalInflow / 100,
+      totalOutflow: totalOutflow / 100,
+      pendingReceiptsAmount: pending.reduce((sum, event) => sum + event.cents, 0) / 100
+    },
+    scheduledEvents: scheduled.map(asPublicEvent),
+    pendingReceipts: pending.map(asPublicEvent)
+  };
+}
+
+const $ = id => document.getElementById(id);
+const canonical = 'https://thisismyuserdealwithit.github.io/smbloan-business-survival-notes/cash-flow-cliff/';
+const money = value => new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD', maximumFractionDigits: 2 }).format(value);
+const params = new URLSearchParams(location.search);
+let chosen = scenarios.find(s => s.id === params.get('scenario')) || scenarios[0];
+let revealed = false;
+let current;
+const clean = (value, max, integer = true) => {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number < 0 || number > max) return 0;
+  return integer ? Math.round(number) : Math.round(number * 100) / 100;
+};
+$('delay').value = clean(params.get('delay'), 21);
+$('deposit').value = clean(params.get('deposit'), 50);
+$('buffer').value = clean(params.get('buffer'), 20000, false);
+$('buffer').step = '0.01';
+for (let day = 1; day <= 30; day++) {
+  const option = document.createElement('option');
+  option.value = String(day); option.textContent = `Day ${day}`; $('guess').append(option);
+}
+scenarios.forEach((s, i) => {
+  const button = document.createElement('button');
+  button.type = 'button'; button.dataset.scenario = s.id;
+  const label = document.createElement('span'); label.textContent = `Challenge 0${i + 1}`;
+  button.append(label, document.createTextNode(s.title));
+  button.addEventListener('click', () => { chosen = s; reset(); });
+  $('scenarios').append(button);
+});
+function settings() {
+  const buffer = Number($('buffer').value);
+  if (!$('buffer').value.trim() || !Number.isFinite(buffer) || buffer < 0 || buffer > 20000 || Math.abs(buffer * 100 - Math.round(buffer * 100)) > .000001) {
+    $('buffer').setAttribute('aria-invalid', 'true');
+    $('toast').textContent = 'Enter extra opening cash from $0 to $20,000, with no more than two decimal places.';
+    return null;
+  }
+  $('buffer').removeAttribute('aria-invalid');
+  return { invoiceDelayDays: Number($('delay').value), depositPercent: Number($('deposit').value), openingBuffer: buffer };
+}
+function reset() {
+  $('delay').value = '0'; $('deposit').value = '0'; $('buffer').value = '0';
+  $('guess').value = 'none'; $('feedback').textContent = ''; $('toast').textContent = '';
+  revealed = false; render();
+}
+function render() {
+  const values = settings(); if (!values) return false;
+  current = simulate(chosen, values);
+  const { summary } = current;
+  $('delay-out').textContent = `${values.invoiceDelayDays} days`;
+  $('deposit-out').textContent = `${values.depositPercent}%`;
+  for (const button of $('scenarios').querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.scenario === chosen.id));
+  $('scenario-title').textContent = chosen.title;
+  $('scenario-desc').textContent = chosen.description;
+  const adjustable = chosen.receipts.find(r => r.id === chosen.adjustableReceiptId);
+  $('opening').textContent = `Original opening cash: ${money(chosen.openingCash)}. Selected receipt: ${adjustable.label}, ${money(adjustable.amount)}, originally day ${adjustable.day}.`;
+  $('minimum').textContent = revealed ? money(summary.minimumCash) : 'Reveal to see';
+  $('minimum').classList.toggle('negative', revealed && summary.minimumCash < 0);
+  $('min-day').textContent = revealed ? `First reaches this on day ${current.days.find(d => d.cash === summary.minimumCash).day}` : 'Read the transactions first';
+  $('first').textContent = revealed ? summary.firstNegativeDay === null ? 'None' : `Day ${summary.firstNegativeDay}` : 'Your guess?';
+  $('first').classList.toggle('negative', revealed && summary.firstNegativeDay !== null);
+  $('closing').textContent = money(summary.closingCash);
+  $('closing').classList.toggle('negative', summary.closingCash < 0);
+  $('chart-box').hidden = !revealed;
+  $('status').textContent = summary.extraBufferNeeded > 0
+    ? `${money(summary.extraBufferNeeded)} more opening cash would bring the lowest day-end balance to zero with these settings. This is the model's remaining gap, not a suggested loan amount.`
+    : 'Every modelled day ends at or above zero. This does not test intraday timing, missing obligations or what happens after day 30.';
+  $('pending').textContent = current.pendingReceipts.length
+    ? `${money(summary.pendingReceiptsAmount)} is now due after day 30 (${current.pendingReceipts.map(r => `day ${r.day}`).join(', ')}). It remains pending and is excluded from the closing balance.`
+    : '';
+  $('transactions').replaceChildren();
+  const events = current.scheduledEvents.filter(e => e.day <= 30);
+  const opening = document.createElement('tr');
+  addCell(opening, '0 · Opening cash'); addCell(opening, money(summary.openingCash)); addCell(opening, '—'); addCell(opening, money(summary.openingCash), true); $('transactions').append(opening);
+  for (const day of current.days.slice(1).filter(d => d.inflow || d.outflow)) {
+    const row = document.createElement('tr');
+    const labels = events.filter(e => e.day === day.day).map(e => e.label).join('; ');
+    addCell(row, `${day.day} · ${labels}`); addCell(row, day.inflow ? money(day.inflow) : '—'); addCell(row, day.outflow ? `−${money(day.outflow)}` : '—');
+    const balance = addCell(row, money(day.cash), true); balance.classList.toggle('negative', day.cash < 0);
+    $('transactions').append(row);
+  }
+  for (const cell of document.querySelectorAll('.balance-cell')) cell.hidden = !revealed;
+  if (revealed) chart();
+  const share = scenarioURL();
+  $('embed').value = `<iframe src="${share}" title="Cash-flow Cliff: a fictional cash-flow challenge" width="100%" height="1100" loading="lazy" style="border:0;"></iframe>`;
+  return true;
+}
+function addCell(row, text, balance = false) {
+  const cell = document.createElement('td'); cell.textContent = text;
+  if (balance) cell.className = 'balance-cell'; row.append(cell); return cell;
+}
+function scenarioURL() {
+  const url = new URL(canonical); const s = current.settings;
+  url.searchParams.set('scenario', chosen.id);
+  if (s.invoiceDelayDays) url.searchParams.set('delay', String(s.invoiceDelayDays));
+  if (s.depositPercent) url.searchParams.set('deposit', String(s.depositPercent));
+  if (s.openingBuffer) url.searchParams.set('buffer', String(s.openingBuffer));
+  url.hash = 'play'; return url.href;
+}
+function svg(tag, attrs, text) {
+  const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, String(value));
+  if (text !== undefined) node.textContent = text; return node;
+}
+function chart() {
+  const original = simulate(chosen), plot = $('chart');
+  plot.replaceChildren(svg('title', { id: 'chart-title' }, 'Day-end cash balance in Australian dollars'), svg('desc', { id: 'chart-desc' }, `Fictional 30-day scenario. Your settings have a minimum of ${money(current.summary.minimumCash)} and close at ${money(current.summary.closingCash)}. Grey dashed line shows the original scenario. Negative balances indicate an unfunded gap.`));
+  const all = [...current.days, ...original.days].map(d => d.cash);
+  let low = Math.min(0, ...all), high = Math.max(0, ...all); const range = high - low || 1000;
+  low -= range * .12; high += range * .12;
+  const x = day => 78 + day / 30 * 622, y = cash => 224 - (cash - low) / (high - low) * 190;
+  const y0 = y(0);
+  plot.append(svg('rect', { x: 78, y: y0, width: 622, height: Math.max(0, 224 - y0), fill: '#f9ece6' }));
+  for (const cash of [Math.min(...all, 0), 0, Math.max(...all, 0)].filter((v, i, a) => a.indexOf(v) === i)) {
+    plot.append(svg('line', { x1: 78, x2: 700, y1: y(cash), y2: y(cash), stroke: cash === 0 ? '#a23a2a' : '#d6dcd1', 'stroke-width': cash === 0 ? 1.5 : 1 }));
+    plot.append(svg('text', { x: 70, y: y(cash) + 4, 'text-anchor': 'end', fill: '#536762', 'font-size': 12 }, money(cash)));
+  }
+  for (const day of [0, 5, 10, 15, 20, 25, 30]) plot.append(svg('text', { x: x(day), y: 245, 'text-anchor': 'middle', fill: '#536762', 'font-size': 12 }, day));
+  plot.append(svg('text', { x: 389, y: 273, 'text-anchor': 'middle', fill: '#536762', 'font-size': 13 }, 'Day of fictional month (0 = opening balance)'));
+  plot.append(svg('text', { x: 78, y: 18, fill: '#536762', 'font-size': 12 }, 'Cash balance · AUD'));
+  const path = days => days.map((d, i) => i === 0 ? `M ${x(d.day)} ${y(d.cash)}` : `H ${x(d.day)} V ${y(d.cash)}`).join(' ');
+  plot.append(svg('path', { d: path(original.days), fill: 'none', stroke: '#9ca69e', 'stroke-width': 3, 'stroke-dasharray': '6 5' }));
+  plot.append(svg('path', { d: path(current.days), fill: 'none', stroke: '#142c2b', 'stroke-width': 3 }));
+  for (const d of current.days.filter(d => d.inflow || d.outflow)) plot.append(svg('circle', { cx: x(d.day), cy: y(d.cash), r: 3, fill: d.cash < 0 ? '#a23a2a' : '#142c2b' }));
+}
+function reveal() {
+  if (!settings()) return;
+  revealed = true; render();
+  const answer = current.summary.firstNegativeDay === null ? 'none' : String(current.summary.firstNegativeDay);
+  const correct = $('guess').value === answer;
+  $('feedback').textContent = `${correct ? 'Correct.' : 'Here is the result.'} ${answer === 'none' ? 'No day ends below zero.' : `Day ${answer} is the first negative day.`} Now move the controls and compare the curves.`;
+}
+async function copyText(text, message) {
+  try { await navigator.clipboard.writeText(text); $('toast').textContent = message; }
+  catch { $('toast').textContent = 'Automatic copying is unavailable. Select and copy the text below.'; $('embed').value = text; $('embed').focus(); $('embed').select(); }
+}
+for (const id of ['delay', 'deposit', 'buffer']) $(id).addEventListener('input', () => { $('feedback').textContent = ''; $('toast').textContent = ''; render(); });
+$('reset').addEventListener('click', reset);
+$('reveal').addEventListener('click', reveal);
+$('share').addEventListener('click', () => { if (render()) copyText(scenarioURL(), 'Scenario link copied. It contains only the fictional settings.'); });
+$('copy-embed').addEventListener('click', () => { if (render()) copyText($('embed').value, 'Embed code copied.'); });
+$('download').addEventListener('click', () => {
+  if (!render()) return;
+  const lines = ['scenario_id,day,opening_or_day_end_cash_aud,cash_received_aud,cash_paid_aud,invoice_delay_days,deposit_percent,extra_opening_cash_aud,synthetic'];
+  for (const d of current.days) lines.push([chosen.id, d.day, d.cash.toFixed(2), d.inflow.toFixed(2), d.outflow.toFixed(2), current.settings.invoiceDelayDays, current.settings.depositPercent, current.settings.openingBuffer.toFixed(2), 'true'].join(','));
+  for (const p of current.pendingReceipts) lines.push([chosen.id, p.day, '', p.amount.toFixed(2), '', current.settings.invoiceDelayDays, current.settings.depositPercent, current.settings.openingBuffer.toFixed(2), 'pending_receipt_outside_30_days'].join(','));
+  const blob = new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = `cash-flow-cliff-${chosen.id}.csv`; document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000); $('toast').textContent = 'Ledger downloaded. Rows after day 30 are pending receipts, not part of the month-end balance.';
+});
+$('print').addEventListener('click', () => { if (!settings()) return; revealed = true; render(); window.print(); });
+render();
+
+})();</script>
+</body></html>
+
